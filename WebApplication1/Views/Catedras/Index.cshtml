@@ -1,0 +1,47 @@
+﻿@model WebApplication1.ViewModel.CatedrasViewModel
+
+@{
+    ViewData["Title"] = "Cátedras";
+}
+
+<h1>Cátedras</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Nueva</a>
+</p>
+<form asp-action="Index" method="get">
+    <p>
+        <!--Filtro por Nombre de Catedra-->
+        Nombre: <input class="form-control" type="text" name="textoBusqueda" /><br>
+
+        <input class="btn btn-primary" type="submit" value="Buscar" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Catedra[0].Descripcion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Catedra)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalle</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Paginacion (Transformada a componente)-->
+<partial name="_Paginador" for="@Model.paginador" />

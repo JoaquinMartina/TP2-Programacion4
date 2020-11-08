@@ -1,0 +1,38 @@
+﻿@model List<WebApplication1.ViewModel.UserRolesViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Usuarios y Roles</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Email</th>
+            <th>Roles</th>
+            <th>Configurar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.User
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    <!--Lista de Roles, separados por coma-->
+                    @string.Join(", ", item.Roles)
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="ManageRoles" asp-route-UserId="@item.UserId">Administrar Roles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

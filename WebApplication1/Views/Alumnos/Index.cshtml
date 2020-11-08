@@ -1,0 +1,103 @@
+﻿@model WebApplication1.ViewModel.AlumnosViewModel
+
+@{
+    ViewData["Title"] = "Alumnos";
+}
+
+<h1>Alumnos</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Nuevo</a>
+</p>
+
+
+<form asp-action="Index" method="get">
+    <p>
+        <!--Filtro por Nombre de alumno-->
+        Nombre: <input class="form-control" type="text" asp-for="textoBusqueda" />
+
+        <!--Filtro por Curso-->
+        Curso:  <select class="form-control" asp-for="CursoId" asp-items="@Model.ListaCursos">
+            <option value="">Todos</option>
+        </select> <br />
+
+        <input class="btn btn-primary" type="submit" value="Buscar" />
+    </p><br />
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Alumnos[0].Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alumnos[0].Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alumnos[0].Legajo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alumnos[0].Edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alumnos[0].AñoIngreso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alumnos[0].AñoCursado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alumnos[0].Localidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alumnos[0].Curso.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alumnos[0].FotoCarnet)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Alumnos)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Legajo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Edad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AñoIngreso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AñoCursado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Localidad.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Curso.Descripcion)
+                </td>
+                <td>
+                    <img src="~/images/Alumnos/@item.FotoCarnet" height="80" width="80" asp-append-version="true" />
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalle</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Paginacion (Transformada a componente)-->
+<partial name="_Paginador" for="@Model.paginador" />

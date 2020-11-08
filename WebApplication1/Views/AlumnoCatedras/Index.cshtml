@@ -1,0 +1,60 @@
+﻿@model WebApplication1.ViewModel.AlumnosCatedrasViewModel
+
+@{
+    ViewData["Title"] = "Inscripciones";
+}
+
+<h1>Inscripciones</h1>
+
+<!--
+<form asp-action="Index" method="get">
+
+        Nombre: <input class="form-control" type="text" asp-for="textoBusqueda" /><br />
+
+        <input class="btn btn-primary" type="submit" value="Buscar" />
+   </p><br />
+</form>
+-->
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AlumnosCatedras[0].Alumno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlumnosCatedras[0].Catedra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlumnosCatedras[0].Cuatrimestre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlumnosCatedras[0].FechaInscripto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.AlumnosCatedras)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Alumno.Apellido)
+                    @Html.DisplayFor(modelItem => item.Alumno.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Catedra.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cuatrimestre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaInscripto)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Paginacion (Transformada a componente)-->
+<partial name="_Paginador" for="@Model.paginador" />
