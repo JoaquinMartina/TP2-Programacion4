@@ -39,17 +39,18 @@ namespace WebApplication1.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
+            [Required(ErrorMessage ="La dirección de Email es requerida")]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "La contraseña es requerida")]
             [StringLength(100, ErrorMessage = "La {0} debe tener al menos {2} y un máximo de {1} caracteres.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Contraseña")]
             public string Password { get; set; }
 
+            [Required(ErrorMessage = "La confirmaión de contraseña es requerida")]
             [DataType(DataType.Password)]
             [Display(Name = "Confirme contraseña")]
             [Compare("Password", ErrorMessage = "La contraseña y su confirmación no coinciden.")]
