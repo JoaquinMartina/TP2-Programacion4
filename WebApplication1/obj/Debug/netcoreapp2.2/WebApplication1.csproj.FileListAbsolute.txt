@@ -120,7 +120,6 @@ D:\Usuario\Documents\Facultad\2-Tecnicatura en Programacion\2do Año\Laboratorio
 D:\Usuario\Documents\Facultad\2-Tecnicatura en Programacion\2do Año\Laboratorio IV\TP2\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\Razor\Views\AlumnoCatedras\Create.g.cshtml.cs
 D:\Usuario\Documents\Facultad\2-Tecnicatura en Programacion\2do Año\Laboratorio IV\TP2\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\Razor\Views\AlumnoCatedras\Delete.g.cshtml.cs
 D:\Usuario\Documents\Facultad\2-Tecnicatura en Programacion\2do Año\Laboratorio IV\TP2\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\Razor\Views\AlumnoCatedras\Details.g.cshtml.cs
-D:\Usuario\Documents\Facultad\2-Tecnicatura en Programacion\2do Año\Laboratorio IV\TP2\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\Razor\Views\AlumnoCatedras\Edit.g.cshtml.cs
 D:\Usuario\Documents\Facultad\2-Tecnicatura en Programacion\2do Año\Laboratorio IV\TP2\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\Razor\Views\Alumnos\Create.g.cshtml.cs
 D:\Usuario\Documents\Facultad\2-Tecnicatura en Programacion\2do Año\Laboratorio IV\TP2\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\Razor\Views\Alumnos\Delete.g.cshtml.cs
 D:\Usuario\Documents\Facultad\2-Tecnicatura en Programacion\2do Año\Laboratorio IV\TP2\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\Razor\Views\Alumnos\Details.g.cshtml.cs
@@ -160,3 +159,4 @@ D:\Usuario\Documents\Facultad\2-Tecnicatura en Programacion\2do Año\Laboratorio
 D:\Usuario\Documents\Facultad\2-Tecnicatura en Programacion\2do Año\Laboratorio IV\TP2\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\WebApplication1.pdb
 D:\Usuario\Documents\Facultad\2-Tecnicatura en Programacion\2do Año\Laboratorio IV\TP2\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\WebApplication1.csproj.CopyComplete
 D:\Usuario\Documents\Facultad\2-Tecnicatura en Programacion\2do Año\Laboratorio IV\TP2\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\Razor\Views\AlumnoCatedras\Index.g.cshtml.cs
+D:\Usuario\Documents\Facultad\2-Tecnicatura en Programacion\2do Año\Laboratorio IV\TP2\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\Razor\Views\AlumnoCatedras\Edit.g.cshtml.cs

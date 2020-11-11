@@ -152,7 +152,10 @@ namespace WebApplication1.Controllers
             {
                 return NotFound();
             }
-            var alumno = await _context.Alumnos.FindAsync(id);
+            var alumno = await _context.Alumnos
+                .Include(a => a.AlumnosCatedras)
+                .ThenInclude(a => a.Catedra)
+                .FirstOrDefaultAsync(a => a.Id ==  id);
             if (alumno == null)
             {
                 return NotFound();

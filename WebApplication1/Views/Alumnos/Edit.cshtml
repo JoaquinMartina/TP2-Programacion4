@@ -64,6 +64,43 @@
                 <input type="submit" value="Guardar" class="btn btn-primary" />
             </div>
         </form>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AlumnosCatedras[0].Catedra)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AlumnosCatedras[0].Cuatrimestre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AlumnosCatedras[0].FechaInscripto)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.AlumnosCatedras)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Catedra.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cuatrimestre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaInscripto)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", "AlumnoCatedras", new { idAlumno = item.AlumnoId, idCatedra = item.CatedraId })
+                    </td>
+                    
+                </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>
 
