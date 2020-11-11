@@ -21,10 +21,12 @@ namespace WebApplication1.Models
         public Catedra Catedra { get; set; }
 
         [Display(Name = "Cuatrimestre")]
-        [Range(0, 3, ErrorMessage = "El número debe ser 1 o 2")]
+        [Range(1, 2, ErrorMessage = "El número debe ser 1 o 2")]
+        [Required(ErrorMessage = "Este campo no debe ser vacío")]
         public int Cuatrimestre { get; set; }
 
         [Display(Name = "Fecha de Inscripción")]
+        [Required(ErrorMessage = "Este campo no debe ser vacío")]
         public DateTime FechaInscripto { get; set; }
     }
 }

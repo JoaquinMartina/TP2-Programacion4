@@ -81,7 +81,7 @@ namespace WebApplication1.Controllers
         // GET: AlumnoCatedras/Create
         public ActionResult Create()
         {
-            ViewData["AlumnoId"] = new SelectList(_context.Alumnos, "Id", "Nombre");
+            ViewData["AlumnoId"] = new SelectList(_context.Alumnos, "Id", "Apellido" );
             ViewData["CatedraId"] = new SelectList(_context.Catedra, "Id", "Descripcion");
             return View();
         }
@@ -116,7 +116,7 @@ namespace WebApplication1.Controllers
             {
                 return NotFound();
             }
-            ViewData["AlumnoId"] = new SelectList(_context.Alumnos, "Id", "Nombre", alumnoCatedra.AlumnoId);
+            ViewData["AlumnoId"] = new SelectList(_context.Alumnos, "Id", "Apellido", alumnoCatedra.AlumnoId);
             ViewData["CatedraId"] = new SelectList(_context.Catedra, "Id", "Descripcion", alumnoCatedra.CatedraId);
             return View(alumnoCatedra);
         }
