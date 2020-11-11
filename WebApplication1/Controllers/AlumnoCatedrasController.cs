@@ -31,7 +31,7 @@ namespace WebApplication1.Controllers
             var applicationDbContext = from alumnoCatedra in _context.AlumnosCatedras
                                        .Include(e => e.Alumno)
                                        .Include(e => e.Catedra) select alumnoCatedra;
-
+            
             //Paginado
             int RegistrosPorPagina = 5;
 
@@ -52,7 +52,7 @@ namespace WebApplication1.Controllers
 
             if (!string.IsNullOrEmpty(textoBusqueda))
             {
-                //applicationDbContext = applicationDbContext.Where(e => e.Alumno.Nombre.Contains(textoBusqueda));
+                alumnosCatedrasViewModel.paginador.ValoresQueryString.Add("textoBusqueda", textoBusqueda);
             }
 
             return View(alumnosCatedrasViewModel);
@@ -82,7 +82,7 @@ namespace WebApplication1.Controllers
         public ActionResult Create()
         {
             ViewData["AlumnoId"] = new SelectList(_context.Alumnos, "Id", "Nombre");
-            ViewData["CatedraId"] = new SelectList(_context.Catedra, "Id", "Nombre");
+            ViewData["CatedraId"] = new SelectList(_context.Catedra, "Id", "Descripcion");
             return View();
         }
 
@@ -98,7 +98,7 @@ namespace WebApplication1.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AlumnoId"] = new SelectList(_context.Alumnos, "Id", "Nombre", alumnoCatedra.AlumnoId);
-            ViewData["CatedraId"] = new SelectList(_context.Catedra, "Id", "Nombre", alumnoCatedra.CatedraId);
+            ViewData["CatedraId"] = new SelectList(_context.Catedra, "Id", "Descripcion", alumnoCatedra.CatedraId);
             return View(alumnoCatedra);
 
         }
@@ -117,7 +117,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
             ViewData["AlumnoId"] = new SelectList(_context.Alumnos, "Id", "Nombre", alumnoCatedra.AlumnoId);
-            ViewData["CatedraId"] = new SelectList(_context.Catedra, "Id", "Nombre", alumnoCatedra.CatedraId);
+            ViewData["CatedraId"] = new SelectList(_context.Catedra, "Id", "Descripcion", alumnoCatedra.CatedraId);
             return View(alumnoCatedra);
         }
 
@@ -147,7 +147,7 @@ namespace WebApplication1.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AlumnoId"] = new SelectList(_context.Alumnos, "Id", "Nombre", alumnoCatedra.AlumnoId);
-            ViewData["CatedraId"] = new SelectList(_context.Catedra, "Id", "Nombre", alumnoCatedra.CatedraId);
+            ViewData["CatedraId"] = new SelectList(_context.Catedra, "Id", "Descripcion", alumnoCatedra.CatedraId);
             return View(alumnoCatedra);
         }
 

@@ -6,15 +6,25 @@
 
 <h1>Inscripciones</h1>
 
-<!--
+<p>
+    <a class="btn btn-success" asp-action="Create">Nueva</a>
+</p>
+
 <form asp-action="Index" method="get">
-
-        Nombre: <input class="form-control" type="text" asp-for="textoBusqueda" /><br />
-
-        <input class="btn btn-primary" type="submit" value="Buscar" />
-   </p><br />
+    <p>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <!--Filtro por Nombre de alumno-->
+                Nombre Alumno: <input class="form-control" type="text" asp-for="textoBusqueda" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Buscar" />
+            </div>
+        </div>
+    </p>
 </form>
--->
 
 <table class="table table-hover">
     <thead>
@@ -37,21 +47,25 @@
     <tbody>
         @foreach (var item in Model.AlumnosCatedras)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Alumno.Apellido)
-                    @Html.DisplayFor(modelItem => item.Alumno.Nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Catedra.Descripcion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cuatrimestre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FechaInscripto)
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alumno.Apellido)
+                @Html.DisplayFor(modelItem => item.Alumno.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Catedra.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cuatrimestre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInscripto)
+            </td>
+            <td>
+                <a class="btn btn-primary" @Html.ActionLink("Editar", "Edit", "AlumnoCatedras", new { idAlumno = item.AlumnoId, idCatedra = item.CatedraId })
+                <a class="btn btn-danger" @Html.ActionLink("Eliminar", "Delete", "AlumnoCatedras", new { idAlumno = item.AlumnoId, idCatedra = item.CatedraId })
+            </td>
+        </tr>
         }
     </tbody>
 </table>

@@ -11,10 +11,17 @@
 </p>
 <form asp-action="Index" method="get">
     <p>
-        <!--Filtro por Nombre de Localidad-->
-        Nombre: <input class="form-control" type="text" name="textoBusqueda" /><br />
-
-        <input class="btn btn-primary" type="submit" value="Buscar" />
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <!--Filtro por Nombre de localidad-->
+                Nombre Localidad: <input class="form-control" type="text" asp-for="textoBusqueda" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Buscar" />
+            </div>
+        </div>
     </p>
 </form>
 <table class="table">

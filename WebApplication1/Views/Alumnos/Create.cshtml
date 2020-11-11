@@ -8,67 +8,72 @@
 
 <h4>Alumno</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
         <!-- Un formulario con multiples partes -->
-        <form asp-action="Create" enctype="multipart/form-data" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
-                <input asp-for="Nombre" class="form-control" />
-                <span asp-validation-for="Nombre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Apellido" class="control-label"></label>
-                <input asp-for="Apellido" class="form-control" />
-                <span asp-validation-for="Apellido" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Legajo" class="control-label"></label>
-                <input asp-for="Legajo" class="form-control" />
-                <span asp-validation-for="Legajo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Edad" class="control-label"></label>
-                <input asp-for="Edad" class="form-control" />
-                <span asp-validation-for="Edad" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AñoIngreso" class="control-label"></label>
-                <input asp-for="AñoIngreso" class="form-control" />
-                <span asp-validation-for="AñoIngreso" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AñoCursado" class="control-label"></label>
-                <input asp-for="AñoCursado" class="form-control" />
-                <span asp-validation-for="AñoCursado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LocalidadId" class="control-label"></label>
-                <select asp-for="LocalidadId" class="form-control" asp-items="ViewBag.LocalidadId">
-                    <option value="">Todas</option>
-                </select>
-                <span asp-validation-for="LocalidadId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CursoId" class="control-label"></label>
-                <select asp-for="CursoId" class="form-control" asp-items="ViewBag.CursoId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="FotoCarnet" class="control-label"></label>
-                <img src="" id="image" alt="Imágen seleccionada" height="80" width="80" asp-append-version="true" />
-                <input asp-for="FotoCarnet" id="img" type="file" class="form-control" />
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
-            </div>
-        </form>
+<form asp-action="Create" enctype="multipart/form-data" method="post">
+    <div class="form-row">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group col-md-6">
+            <label asp-for="Nombre" class="control-label"></label>
+            <input asp-for="Nombre" class="form-control" />
+            <span asp-validation-for="Nombre" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Apellido" class="control-label"></label>
+            <input asp-for="Apellido" class="form-control" />
+            <span asp-validation-for="Apellido" class="text-danger"></span>
+        </div>
     </div>
-</div>
-
-<div>
-    <a class="btn btn-info" asp-action="Index">Listado</a>
-</div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="Legajo" class="control-label"></label>
+            <input asp-for="Legajo" class="form-control" />
+            <span asp-validation-for="Legajo" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Edad" class="control-label"></label>
+            <input asp-for="Edad" class="form-control" />
+            <span asp-validation-for="Edad" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="AñoIngreso" class="control-label"></label>
+            <input asp-for="AñoIngreso" class="form-control" />
+            <span asp-validation-for="AñoIngreso" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="AñoCursado" class="control-label"></label>
+            <input asp-for="AñoCursado" class="form-control" />
+            <span asp-validation-for="AñoCursado" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="LocalidadId" class="control-label"></label>
+            <select asp-for="LocalidadId" class="form-control" asp-items="ViewBag.LocalidadId">
+                <option value="">Todas</option>
+            </select>
+            <span asp-validation-for="LocalidadId" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="CursoId" class="control-label"></label>
+            <select asp-for="CursoId" class="form-control" asp-items="ViewBag.CursoId"></select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="FotoCarnet" class="control-label"></label>
+            <img src="" id="image" alt="Imágen seleccionada" height="80" width="80" asp-append-version="true" />
+            <input asp-for="FotoCarnet" id="img" type="file" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Guardar" class="btn btn-primary btn-lg btn-block" />
+    </div>
+    <div>
+        <a class="btn btn-info btn-lg btn-block" asp-action="Index">Listado</a>
+    </div>
+</form>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
