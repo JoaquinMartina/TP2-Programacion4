@@ -2,7 +2,7 @@
 Trabajo Practico  .Net Core - EntityFramework - Auth y Roles (Alumnos)
 
 
-- Se reañliza toda la funcionalidad posible (Faltarian encarar algunas como por ejemplo realizar edición y eliminación de una inscripción - para esto creo que es necesario una nueva tabla con PK unica)
+- Se realiza toda la funcionalidad posible (Faltarian encarar algunas como por ejemplo realizar edición y eliminación de una inscripción - para esto creo que es necesario una nueva tabla con PK unica)
 - A modo de prueba realizo altas de inscripciones a nivel de BDD y App y la eliminación y edición desde la BDD y se refleja correctamente en la vista
 
 - Se incluye logica y vistas con Identidad de Usuario y Roles
