@@ -89,7 +89,7 @@ namespace WebApplication1.Controllers
         // POST: AlumnoCatedras/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind("AlumnoId,CatedraId,FechaInscripcion")] AlumnoCatedra alumnoCatedra)
+        public async Task<ActionResult> Create([Bind("AlumnoId,CatedraId,Cuatrimestre,FechaInscripcion")] AlumnoCatedra alumnoCatedra)
         {
             if (ModelState.IsValid)
             {
@@ -124,7 +124,7 @@ namespace WebApplication1.Controllers
         // POST: AlumnoCatedras/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind("AlumnoId,CatedraId,FechaInscripcion")] AlumnoCatedra alumnoCatedra)
+        public async Task<ActionResult> Edit([Bind("AlumnoId,CatedraId,Cuatrimestre,FechaInscripcion")] AlumnoCatedra alumnoCatedra)
         {
             if (ModelState.IsValid)
             {
@@ -172,12 +172,12 @@ namespace WebApplication1.Controllers
         }
 
         // POST: AlumnoCatedras/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var alumnoCatedra = await _context.AlumnosCatedras.FindAsync(id);
-            _context.AlumnosCatedras.Remove(alumnoCatedra);
+            var estudianteMateria = await _context.AlumnosCatedras.FindAsync(id);
+            _context.AlumnosCatedras.Remove(estudianteMateria);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

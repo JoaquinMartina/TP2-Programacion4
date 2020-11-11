@@ -63,7 +63,7 @@
             </td>
             <td>
                 <a class="btn btn-primary" @Html.ActionLink("Editar", "Edit", "AlumnoCatedras", new { idAlumno = item.AlumnoId, idCatedra = item.CatedraId })
-                <a class="btn btn-danger" @Html.ActionLink("Eliminar", "Delete", "AlumnoCatedras", new { idAlumno = item.AlumnoId, idCatedra = item.CatedraId })
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.AlumnoId">Eliminar</a>
             </td>
         </tr>
         }
