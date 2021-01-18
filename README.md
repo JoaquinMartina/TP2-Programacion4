@@ -1,4 +1,4 @@
-# TP2-Laboratorio de Computación 4
+# TP2-Programación 4
 Trabajo Practico  .Net Core - EntityFramework - Auth y Roles (Alumnos)
 
 
